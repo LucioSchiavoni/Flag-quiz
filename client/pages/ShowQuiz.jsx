@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { shuffle } from 'lodash';
 
-const URI = 'https://restcountries.com/v3.1/all';
+
 
 const ShowQuiz = () => {
   const [item, setItem] = useState([]);
@@ -15,6 +15,7 @@ const ShowQuiz = () => {
 
   const getItems = async () => {
     try {
+      const URI = 'https://restcountries.com/v3.1/all';
       const res = await axios.get(URI);
       const allFlags = res.data;
 
