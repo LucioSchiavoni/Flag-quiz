@@ -18,7 +18,7 @@ const ShowQuiz = () => {
   const getItems = async () => {
     try {
     
-      const res = await axios.get("https://restcountries.com/v3.1/all");
+      const res = await axios.get("/api/all");
       const allFlags = res.data;
 
       // Obtener todas las banderas y mezclarlas
