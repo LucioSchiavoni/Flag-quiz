@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+
+import clienteAxios from '@/config/axios';
 import { shuffle } from 'lodash';
+import axios from 'axios';
 
 
 
@@ -15,7 +17,7 @@ const ShowQuiz = () => {
 
   const getItems = async () => {
     try {
-      const URI = 'https://restcountries.com/v3.1/all';
+      const URI = "https://restcountries.com/v3.1/all"
       const res = await axios.get(URI);
       const allFlags = res.data;
 
@@ -49,7 +51,7 @@ const ShowQuiz = () => {
     getItems();
   };
 
-  console.log("Give me a job :)")
+ 
 
   return (
     <>

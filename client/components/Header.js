@@ -18,6 +18,7 @@ const handleGoogleSignIn = async () => {
 }
 
     console.log(user)
+    console.log("Give me a job :)")
 
     return (
         <>
