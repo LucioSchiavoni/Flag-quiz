@@ -48,7 +48,7 @@ const ShowQuiz = () => {
     getItems();
   };
 
-  console.log("Give me a job!")
+  console.log("Give me a job :)")
 
   return (
     <>
