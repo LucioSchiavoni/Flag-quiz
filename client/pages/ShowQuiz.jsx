@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import clienteAxios from '@/config/axios';
+
 import { shuffle } from 'lodash';
 import axios from 'axios';
 
@@ -17,8 +17,8 @@ const ShowQuiz = () => {
 
   const getItems = async () => {
     try {
-      const URI = "https://restcountries.com/v3.1/all"
-      const res = await axios.get(URI);
+    
+      const res = await axios.get('api/flags');
       const allFlags = res.data;
 
       // Obtener todas las banderas y mezclarlas
