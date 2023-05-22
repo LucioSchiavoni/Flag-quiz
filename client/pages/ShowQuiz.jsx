@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-
-
 import { shuffle } from 'lodash';
 import axios from 'axios';
+
+
 
 
 
@@ -18,7 +18,7 @@ const ShowQuiz = () => {
   const getItems = async () => {
     try {
     
-      const res = await axios.get('api/flags');
+      const res = await axios.get("https://restcountries.com/v3.1/all");
       const allFlags = res.data;
 
       // Obtener todas las banderas y mezclarlas
@@ -29,8 +29,7 @@ const ShowQuiz = () => {
 
       // Obtener un nombre aleatorio de una de las banderas seleccionadas
       const randomFlagIndex = Math.floor(Math.random() * selectedFlags.length);
-      const randomFlagName =
-        selectedFlags[randomFlagIndex].translations?.spa?.common || '';
+      const randomFlagName =  selectedFlags[randomFlagIndex].translations?.spa?.common || '';
 
       setFlagName(randomFlagName);
       setItem(selectedFlags);
