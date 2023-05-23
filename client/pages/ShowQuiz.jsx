@@ -9,6 +9,7 @@ const ShowQuiz = () => {
   const [item, setItem] = useState([]);
   const [flagName, setFlagName] = useState('');
   const [points, setPoints] = useState(0);
+  const [selectedFlag, setSelectedFlag] = useState(null);
 
   useEffect(() => {
     getItems();
@@ -17,7 +18,7 @@ const ShowQuiz = () => {
   const getItems = async () => {
     try {
 
-      const res = await clienteAxios.get("/all");
+      const res = await clienteAxios.get("https://restcountries.com/v3.1/all");
       const allFlags = res.data;
 
       // Obtener todas las banderas y mezclarlas
@@ -44,7 +45,7 @@ const ShowQuiz = () => {
     } else {
       setPoints(0);
     }
-
+    setSelectedFlag(selectedFlagName);
     // Obtener nuevas banderas
     getItems();
   };
@@ -57,19 +58,23 @@ const ShowQuiz = () => {
       <div className="h-auto w-11/12 mb-20 mt-2 m-auto border rounded p-3 bg-white text-black shadow-xl shadow-gray-800">
         <p className="text-center text-2xl font-bold">{flagName}</p>
         <div className="grid grid-cols-2 gap-10 mt-10">
+        
           {item.map((flag) => (
+          
             <div
-
-              className="border shadow-lg shadow-gray-700 rounded-lg p-2 bg-gray-200"
-            >
-              <button
-                className="hover:bg-gray-200"
+key={flag.translations?.spa?.common} >
+             
+            
+              <button 
+                className="hover:bg-gray-200" 
                 onClick={() => handleFlagSelection(flag.translations?.spa?.common)}
               >
-                <img src={flag.flags.png} alt="flag-foto" className="m-auto h-24" />
+                <img src={flag.flags.png} alt="flag-foto" className="m-auto h-24 shadow-lg shadow-black" />
               </button>
-            </div>
+            </div> 
+            
           ))}
+         
         </div>
       </div>
     </>

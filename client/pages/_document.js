@@ -4,6 +4,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-Dp6M4hjD+FbrOqJLCY8+K3wOqD2MfD1lPT73vhz5n/Zz+C0iX7DId8P5vWnbf+V+" crossorigin="anonymous"/>
+
       <body>
         <Main />
         <NextScript />

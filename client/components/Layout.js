@@ -11,8 +11,8 @@ export const Layout = ({ children }) => {
 
                 <title>Flags App</title>
             </Head>
-            <div className='w-full text-slate-500 bg-gradient-to-r from-sky-900 to-sky-500
-              bg-no-repeat bg-cover'>
+            <div className='w-full text-slate-500 bg-[url(https://wallpapercave.com/wp/wp7812715.jpg)] bg-cover
+              bg-no-repeat   '>
                 <div className=''>
                     <Header />
                     <main className='mt-20'>
