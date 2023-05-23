@@ -8,7 +8,7 @@ export const Layout = ({ children }) => {
     return (
         <>
             <Head>
-               
+
                 <title>Flags App</title>
             </Head>
             <div className='w-full text-slate-500 bg-gradient-to-r from-sky-900 to-sky-500

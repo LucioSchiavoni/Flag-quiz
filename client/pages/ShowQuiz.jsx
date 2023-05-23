@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { shuffle } from 'lodash';
 import axios from 'axios';
-
-
+import clienteAxios from '@/config/axios';
 
 
 
@@ -17,8 +16,8 @@ const ShowQuiz = () => {
 
   const getItems = async () => {
     try {
-    
-      const res = await axios.get("/api/all");
+
+      const res = await clienteAxios.get("/all");
       const allFlags = res.data;
 
       // Obtener todas las banderas y mezclarlas
@@ -29,7 +28,7 @@ const ShowQuiz = () => {
 
       // Obtener un nombre aleatorio de una de las banderas seleccionadas
       const randomFlagIndex = Math.floor(Math.random() * selectedFlags.length);
-      const randomFlagName =  selectedFlags[randomFlagIndex].translations?.spa?.common || '';
+      const randomFlagName = selectedFlags[randomFlagIndex].translations?.spa?.common || '';
 
       setFlagName(randomFlagName);
       setItem(selectedFlags);
@@ -50,7 +49,7 @@ const ShowQuiz = () => {
     getItems();
   };
 
- 
+
 
   return (
     <>
@@ -60,7 +59,7 @@ const ShowQuiz = () => {
         <div className="grid grid-cols-2 gap-10 mt-10">
           {item.map((flag) => (
             <div
-          
+
               className="border shadow-lg shadow-gray-700 rounded-lg p-2 bg-gray-200"
             >
               <button
